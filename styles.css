@@ -240,6 +240,7 @@ body{
 @media screen and (min-width:901px) {
     .main{
         grid-template-columns: 40% 60%;
+        grid-template-rows: 500px auto;
         justify-content: center;
     }
     .title-body{
@@ -262,8 +263,13 @@ body{
         padding: 10% 5%;
         background-color: #fff ;
     }
+    .head{
+        height: 500px;
+    }
     #head{
-        background-image:none ;
+        background-image:none;
+        height: 500px;
+        
     }
     .para p{
         background-image: none;
