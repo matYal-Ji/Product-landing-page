@@ -17,24 +17,43 @@ html{
     align-items: center;
     justify-content: center;
 }
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 3.5rem;
+}
+h3{
+    font-size: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+}
 a{
     text-decoration: none;
+    color: royalblue;
+}
+a:visited{
+    color: lightyellow;
+}
+p{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 #hero{
-    background-image: url(https://i.pinimg.com/564x/e1/f6/d7/e1f6d704890d5ac5ad9cb471add664bd.jpg);
+    background-image: url(https://wallpapercave.com/wp/wp4587011.jpg);
     background-size: cover;
-    background-position: center top;
     position: relative;
+    z-index: 1;
 }
 #hero::after{
     content: '';
-    position: relative;
+    position: absolute;
     left: 0;
-    right: 0;
+    top: 0;
     height: 100%;
     width: 100%;
     background-color: black;
     opacity: 0.7;
+    z-index: -1;
 }
 #hero .hero{
     max-width: 1200px;
@@ -56,60 +75,17 @@ a{
 }
 @keyframes text_reveal{
     100%{
-        color: #b08a0c;
+        color: rgba(188, 127, 36);
     }
 }
 
 
-
-/*******************************
-
-body{
-    position: fixed;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    max-height: 100%;
-    z-index: -1;
-    background-image:url(https://i.pinimg.com/564x/4e/67/1e/4e671ef56d616c1b7921ca95a079b4ed.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(2px);
-}
- body::after{
-    content: " ";
-    background-color: black;
-    opacity: .7;
-} 
-.container{
-    min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* max-width: 1200px; */
-    /* margin: 0 auto; 
-    padding: 0 50px;
-    margin-left: 5%;
-    
-}
-/* @media (max-width:400px) {
-    .container{
-        justify-content: 50px;
-    }
-}
-@media (min-width:401px) {
-    .container{
-        justify-content: 150px;
-    }
-} 
-***********************************/
 .explore{
     display: inline-block;
     padding: 10px 30px;
     color: whitesmoke;
     background-color: transparent;
-    border: 2px solid coral;
+    border: 2px solid rgba(188, 127, 36, 0.48);
     border-radius: 0 10px 0 10px;
     font-size: 2rem;
     font-weight: 700;
@@ -123,8 +99,8 @@ body{
 }
 .explore:hover{
     color: whitesmoke;
-    background-color: rgb(163, 83, 54);
-    border: 2px solid rgb(163, 83, 54);
+    background-color: rgba(188, 127, 36, 0.48);
+    border: 2px solid rgba(188, 127, 36, 0.48);
 }
 
 /* main grid */
@@ -132,7 +108,7 @@ body{
 #head{
     grid-area: head;
 }
-.title-body{
+.tile-body{
     grid-area: grid;
 }
 .para{
@@ -141,6 +117,7 @@ body{
 .main{
     display:grid;
     grid-template-areas: 'head' 'grid' 'para';
+    justify-content: center;
 }
 
 /* Head */
@@ -155,7 +132,7 @@ body{
     padding-bottom: 3%;
 }
 .head p, .para p{
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-align: justify;
 }
 .head span{
@@ -165,11 +142,10 @@ body{
 /* end Head */
 
 .para p{
-    padding: 20% 5% 10% 5%;
+    padding: 10% 5% 10% 5%;
     background-image: linear-gradient(0deg, white,rgba(188, 127, 36, 0.48));
-    font-size: 2.3rem;
 }
- 
+
 /* Responsive Grid   */
 .tile-body{
     background-color: rgba(188, 127, 36, 0.48);
@@ -191,25 +167,29 @@ body{
 .tile,.tile img{
     position: relative;
     text-align: center;
-    color: rgb(0, 0, 0);
-    transition: 0.3s ease-out;
+    transition: 0.2s ease-out;
     transition-property: all;
 }
 .tile img:hover{
     padding: 0;
-    filter: blur(5px);
+    filter: blur(1px);
+    background-color: #000;
+    opacity: .3;
 }
 .tile h2, .tile p{
     position: absolute;
-    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
 }
 .tile h2{
     bottom: 5px;
-    left: 5px;
+    left: 10px;
+    font-size: 3rem;
 }
 .tile p{
     top: 3px;
-    left: 5px;
+    left: 10px;
+    font-size: 2rem;
 }
 
 .tile-container{
@@ -225,9 +205,92 @@ body{
     grid-row: 5/7;
 }
 
+/* contact info */
+#contact{
+    padding: 10% 10%;
+    max-width: 800px;
+    margin: auto;
+}
+.info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20%;
+}
+.info h2{
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    background-color: gray;
+    border-radius: 15px;
+    grid-column: 1/3;
+    margin-bottom: 10%;
+    word-spacing: 5px;
+}
+.info span{
+    margin: 0 0 0 20px;
+    color: rgb(0, 95, 95);
+}
+.address, .contact{
+    /* display: inline-block; */
+    border: 1px solid black;
+    border-radius: 7px;
+    text-align: center;
+}
+.address h3, .address p, .contact h3, .contact p{
+    padding: 2px 10px;
+}
+.mail{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.mail h3{
+    letter-spacing:5px;
+    word-spacing: 3px;
+}
+.mail label{
+    font-size: 2rem;
+    font-weight: lighter;
+}
+input{
+    width: 80%;
+    height: 5rem;
+    font-size: 2rem;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    margin: auto;
+}
+input:focus{
+    background-color: rgba(188, 127, 36, 0.48);
+    outline: 0px;
+}
+footer{
+    height: 3em;
+    background-color: black;
+    font-size: 1.5em;
+    color: whitesmoke;
+    position: relative;
+}
+.p1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0.5em 5%;
+}
+.p2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5em 5%;
+}
+
 @media screen and (max-width:900px) {
     .tile-container{
-        max-width: 70%;
+        width: 500px;
+        margin: auto;
     }
 }
 
@@ -240,38 +303,20 @@ body{
 @media screen and (min-width:901px) {
     .main{
         grid-template-columns: 40% 60%;
-        grid-template-rows: 500px auto;
-        justify-content: center;
+        grid-template-rows: 60% 40%;
+        grid-template-areas: 'head grid' 'para grid';
+        max-width: 1000px;
+        margin-top: 10%;
+        margin: auto;
     }
-    .title-body{
-        grid-column: 1/2;
-        grid-row: 1/2;
+    .tile-body, .para, .para p, #head{
         width: 100%;
         height: 100%;
-    }
-    .para{
-        grid-column: 1/2;
-        grid-row: 2/3;
-        height: 100%;
-        width: 100%;
-    }
-    .tile-container{
-        grid-column: 2/3;
-        grid-row: 1/3;
+        margin: auto;
+        background-image: none;
     }
     .tile-body{
         padding: 10% 5%;
         background-color: #fff ;
-    }
-    .head{
-        height: 500px;
-    }
-    #head{
-        background-image:none;
-        height: 500px;
-        
-    }
-    .para p{
-        background-image: none;
     }
 }
