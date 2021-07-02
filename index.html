@@ -8,8 +8,23 @@
     <title>E-Commerce</title>
 </head>
 <body>
-    <header>
-        <!-- <img src="https://i.pinimg.com/564x/62/21/71/6221710cfa3e55bc94391e32b1e1734d.jpg" alt=""> -->
+    <header id="header">
+        <div class="header">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero"><h1><span>D</span>oon <span>T</span>iles</h1></a>
+                </div>
+                <div class="nav-list">
+                    <div id="button">X</div>
+                    <div class="boxin-box">
+                        <div class="box-1"><a href="#" data-after="Home">Home</a></div>
+                        <div class="box-2"><a href="#head" data-after="About">About</a></div>
+                        <div class="box-3"><a href="#grid" data-after="Samples">Samples</a></div>
+                        <div class="box-4"><a href="#contact" data-after="contact">Contact</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <section id="hero">
         <div class="hero container">
@@ -36,7 +51,7 @@
         </div>
         <!-- end of head -->
         <!-- Grid -->
-        <div class="tile-body">
+        <div id="grid" class="tile-body">
             <div class="tile-container">
                 <div class="tile t1">
                     <img src="https://i.pinimg.com/236x/00/61/67/00616708e556ec7d31d30852b34be16d.jpg" alt="">
@@ -120,24 +135,27 @@
             </div>
             <div class="contact">
                 <div>
-                    <h3>phone</h3>
+                    <h3>call us:</h3>
                     <p>+91 7417878430</p>
                 </div>
                 <div>
-                    <h3>mail</h3>
+                    <h3>mail us:</h3>
                     <p>doontiles@gmail.com</p>
                 </div>
             </div>
         </div>
         <div class="mail">
             <h3>STAY CONNECTED</h3><br>
-            <label for="email">Design - Trends - Events</label><br>
-            <input type="email" name="mail-id" id="mail-contact" placeholder="Your Email Address">
+            <form action="https://www.freecodecamp.com/email-submit" id="form">  
+                <label for="email">Design - Trends - Events</label><br>
+                <input type="email" name="mail-id" id="mail-contact" placeholder="Your Email Address">
+            </form>
         </div>
     </div>
     <footer>
         <p class="p1"> the tile shop all rights reserved.</p>
         <p class="p2"><a href="#">privacy policy </a> | <a href="#"> terms of use</a></p>
     </footer>
+    <script src="./button.js"></script>
 </body>
 </html>
